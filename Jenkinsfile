@@ -9,17 +9,20 @@ pipeline {
                 sh 'ls hau'
             }
         }
-        stage('Deploy') {
+        stage('Provision AWS Instance') {
             steps {
                 echo '[INFO] Deploying to AWS'
                 // sh 'scp -r web_app user@ip_add:/var/www/html'
             }
         }
-        stage('Notification') {
+        stage('Deploy') {
             steps {
                 echo '[INFO] Sending Notifications'
                 // sh 'sh notif.sh'
             }
         }
+    }
+    post {
+        cleanws()
     }
 }
