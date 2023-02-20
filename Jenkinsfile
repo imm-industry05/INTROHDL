@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 echo '[INFO] Cloning Repository'
-                // sh 'git clone <repo_url>'
+                sh 'git clone --depth 1 --single-branch https://github.com/imm-industry05/hau.git -b canilao-h'
             }
         }
         stage('Deploy') {
