@@ -22,5 +22,11 @@ pipeline {
                 // sh 'sh notif.sh'
             }
         }
+        stage('Notification') {
+            steps {
+                echo '[INFO] Sending Notifications'
+                sh 'sh notif.sh'
+            }
+        }
     }
 }
