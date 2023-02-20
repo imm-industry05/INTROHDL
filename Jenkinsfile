@@ -25,7 +25,9 @@ pipeline {
         stage('Notification') {
             steps {
                 echo '[INFO] Sending Notifications'
+                sh 'ls'
                 sh 'sh notif.sh'
+                cleanWs()
             }
         }
     }
