@@ -6,8 +6,8 @@ pipeline {
             steps {
                 cleanWs()
                 echo '[INFO] Cloning Repository'
-                sh 'git clone --depth 1 --single-branch https://github.com/imm-industry05/hau.git -b canilao-h'
-                sh 'ls hau'
+                sh 'git clone --depth 1 --single-branch https://github.com/WonderCMS/wondercms.git'
+                sh 'ls wondercms'
             }
         }
         stage('Provision AWS Instance') {
