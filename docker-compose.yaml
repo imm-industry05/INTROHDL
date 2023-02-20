@@ -12,3 +12,13 @@ services:
       - 50000:50000
     volumes:
       - /var/lib/docker/volumes/jenkins_home/_data:/var/jenkins_home
+
+  jenkins2:
+    image: jenkins/jenkins:jdk11
+    container_name: jenkins-demo
+    privileged: true
+    restart: always
+    user: root
+    ports:
+      - 8081:8080
+      - 50001:50000
