@@ -24,8 +24,7 @@ pipeline {
         stage('Notification') {
             steps {
                 echo '[INFO] Sending Notifications'
-                sh 'ls'
-                sh 'sh notif.sh'
+                slackSend channel: '#random', message: 'Pipeline Done' tokenCredentialId: 'slack'
                 cleanWs()
             }
         }
