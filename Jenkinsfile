@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
+                cleanWs()
                 echo '[INFO] Cloning Repository'
                 sh 'git clone --depth 1 --single-branch https://github.com/imm-industry05/hau.git -b canilao-h'
                 sh 'ls hau'
@@ -21,8 +22,5 @@ pipeline {
                 // sh 'sh notif.sh'
             }
         }
-    }
-    post {
-        cleanws()
     }
 }
